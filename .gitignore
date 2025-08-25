@@ -1,0 +1,26 @@
+# Terraform state files
+*.tfstate
+*.tfstate.backup
+
+# Terraform variables that may contain secrets
+*.tfvars
+environments/*/*.tfvars
+
+# Crash logs
+crash.log
+
+# CLI history
+.terraformrc
+terraform.rc
+
+# Terraform directories
+.terraform/
+
+# Ignore any OS-specific files
+.DS_Store
+Thumbs.db
+
+# Optional: IDE/editor files
+.vscode/
+.idea/
+*.swp
