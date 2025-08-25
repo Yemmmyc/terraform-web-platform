@@ -15,23 +15,6 @@ module "networking" {
 }
 
 # -----------------------------
-# Load Database Module
-# -----------------------------
-module "database" {
-  source = "../../modules/database"
-
-  project           = var.project
-  db_identifier     = var.db_identifier
-  db_name           = var.db_name
-  db_user           = var.db_user
-  db_password       = var.db_password
-  instance_class    = var.instance_class
-  private_subnets   = module.networking.private_subnet_ids
-  subnet_group_name = module.networking.db_subnet_group
-  security_group_ids = [module.networking.db_sg_id]
-}
-
-# -----------------------------
 # Load Compute Module (Dev: ELB/ASG disabled)
 # -----------------------------
 module "compute" {
@@ -44,4 +27,25 @@ module "compute" {
   project         = var.project
   enable_elb      = var.enable_elb  # ELB & ASG disabled for dev
   ssh_key_name    = var.ssh_key_name   # ✅ add this
+  security_group_ids = [module.networking.app_sg_id] 
 }
+
+# -----------------------------
+# Load Database Module
+# -----------------------------
+module "database" {
+  source = "../../modules/database"
+
+  project           = var.project
+  db_identifier     = var.db_identifier
+  db_name           = var.db_name
+  db_user           = var.db_user
+  db_password       = var.db_password
+  instance_class    = var.instance_class
+  private_subnets   = module.networking.private_subnet_ids
+  security_group_ids = [module.networking.db_sg_id]
+  vpc_id            = module.networking.vpc_id
+  subnet_group_name = var.subnet_group_name
+
+}
+

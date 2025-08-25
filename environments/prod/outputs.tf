@@ -6,20 +6,20 @@ output "launch_template_id" {
   value       = module.compute.launch_template_id
 }
 
-output "alb_arn" {
-  description = "Application Load Balancer ARN (null if disabled)"
-  value       = module.compute.alb_arn
-}
+# output "alb_arn" {
+# description = "Application Load Balancer ARN (null if disabled)"
+# value       = module.compute.alb_arn
+#}
 
-output "alb_dns_name" {
-  description = "Application Load Balancer DNS name (null if disabled)"
-  value       = module.compute.alb_dns_name
-}
+# output "alb_dns_name" {
+# description = "Application Load Balancer DNS name (null if disabled)"
+# value       = module.compute.alb_dns_name
+#}
 
-output "asg_name" {
-  description = "Auto Scaling Group name"
-  value       = module.compute.asg_name
-}
+# output "asg_name" {
+#  description = "Auto Scaling Group name"
+#  value       = module.compute.asg_name
+#}
 
 # Database module outputs
 output "db_instance_id" {

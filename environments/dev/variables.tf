@@ -83,3 +83,9 @@ variable "instance_class" {
   description = "RDS instance class (e.g., db.t3.micro)"
   type        = string
 }
+
+variable "subnet_group_name" {
+  description = "Name of the DB Subnet Group"
+  type        = string
+}
+
