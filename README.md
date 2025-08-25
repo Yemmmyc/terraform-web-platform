@@ -179,6 +179,6 @@ Confirm with `yes` to prevent orphaned resources and unexpected costs.
 
 ---
 
-**Author:** Yemisi
+**Author:** Oluwayemisi Okunrounmu
 **Project:** Terraform Web Platform
 **Date:** 2025-08-25
