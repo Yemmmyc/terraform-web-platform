@@ -113,14 +113,6 @@ These outputs can be used in scripts, monitoring, or for connecting applications
 
 ---
 
-## Monitoring & Testing
-
-* Use **AWS CloudWatch** to monitor EC2, RDS, and Auto Scaling metrics.
-* Test Auto Scaling by simulating load on EC2 instances.
-* Optional: Enable alarms for CPU utilization, RDS storage, or network traffic.
-
----
-
 ## Git Version Control Strategy
 
 1. **Ignore sensitive files** in `.gitignore`:
